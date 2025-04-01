@@ -13,5 +13,7 @@ def abc(arr: []) -> []:
     return arr
 
 print(abc([3,2,6,-111,1,1]))
+print(abc([2,1,1]))
+
 
 
