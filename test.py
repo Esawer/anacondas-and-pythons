@@ -12,8 +12,18 @@ def abc(arr: []) -> []:
 
     return arr
 
-print(abc([3,2,6,-111,1,1]))
-print(abc([2,1,1]))
+def selection_sort(arr: []) -> []:
+    for i in range(len(arr)):
+        min_element = i
+        for j in range(i,len(arr)):
+            if arr[min_element] > arr[j]:
+                min_element = j
+        arr[min_element], arr[i] = arr[i], arr[min_element]
+
+    return arr
+
+print(bubble_sort([3, 2, 6, -111, 1, 1]))
+print(selection_sort([3,3,3,3,1,-444,123]))
 
 
 
