@@ -1,9 +1,6 @@
 # anacondas-and-pythons
 
 To your information, I am just playing around.
-<<<<<<< test-branch-1
 Added some more info.
-=======
+It seems to be fine thing, in future quite useful
 
-seems to be fine thing, in future quite useful
->>>>>>> main
