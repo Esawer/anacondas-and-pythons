@@ -27,7 +27,7 @@ def selection_sort(arr: []) -> []:
 # or smth like that
 
 #all else was quite good few changes here and there, but mostly good.
-#wwwwwww
+#ok ok ok
 def binary_search(arr: [], needle):
     if not arr:
         return -1
