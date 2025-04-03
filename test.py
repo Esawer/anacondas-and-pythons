@@ -14,6 +14,7 @@ def bubble_sort(arr: []) -> []:
 
 
 
+
 def selection_sort(arr: []) -> []:
     for i in range(len(arr)):
         min_element = i
