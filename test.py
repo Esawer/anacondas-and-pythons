@@ -1,6 +1,6 @@
 #Basic sorting algorithm
 
-def abc(arr: []) -> []:
+def bubble_sort(arr: []) -> []:
     for i in range(len(arr)):
         checker = False
         for j in range(len(arr)-1-i):
@@ -26,4 +26,4 @@ print(bubble_sort([3, 2, 6, -111, 1, 1]))
 print(selection_sort([3,3,3,3,1,-444,123]))
 
 
-
+###boho pants are the best
