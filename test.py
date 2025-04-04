@@ -51,3 +51,8 @@ print(selection_sort([3, 3, 3, 3, 1, -444, 123]))"""
 print(binary_search([1,2,3,4,5,6,7,8,9,19],19))
 
 
+<<<<<<< HEAD
+=======
+###boho pants are the best
+#ooo
+>>>>>>> 242d8cd66c9310e370723b171c797ead4844d736
