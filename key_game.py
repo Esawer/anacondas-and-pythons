@@ -1,5 +1,7 @@
 import random
-# key game - project 1
+
+
+# key game - project 1, working
 
 def player_moving():
     while True:
@@ -15,10 +17,10 @@ def player_moving():
         elif (player_move == 'a' or player_move == 'A') and player[1] != 0:
             player[1] -= 1
             break
-        elif (player_move == 'd' or player_move == 'D') and player[1] != map_size-1:
+        elif (player_move == 'd' or player_move == 'D') and player[1] != map_size - 1:
             player[1] += 1
             break
-        elif (player_move == 's' or player_move == 'S') and player[0] != map_size-1:
+        elif (player_move == 's' or player_move == 'S') and player[0] != map_size - 1:
             player[0] += 1
             break
         else:
@@ -51,8 +53,6 @@ while not found_the_key:
         print("")
     print("")
     player_moving()
-    player_moves+=1
+    player_moves += 1
 
 print(f"Hurry, you have found the key at {player[1]},{player[0]} - using only {player_moves}!")
-
-
