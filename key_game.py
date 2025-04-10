@@ -1,7 +1,7 @@
 import random
 
 
-# key game - project 1, working
+# key game - project 1, well working
 
 def player_moving():
     while True:
