@@ -1,3 +1,22 @@
+# katas - may be deleted(?)
+
+
+
+"""def count_by(x, n):
+    result = []
+    for i in range(1, n + 1):
+        result.append(i * x)
+    return result
+"""
+"""def count_sheeps(sheep):
+    a = 0
+    if not sheep:
+        return a
+    for i in range(len(sheep)):
+        if sheep[i] == True:
+            a+=1
+    return a"""
+
 # Basic sorting algorithm
 
 """def bubble_sort(arr: []) -> []:
@@ -11,8 +30,6 @@
             return arr
 
     return arr"""
-
-
 
 """def selection_sort(arr: []) -> []:
     for i in range(len(arr)):
@@ -35,7 +52,7 @@ def merge_sort(arr: []) -> []:
 def merge(left,right):
     """
 
-#deep seek helped me out a little, it is important to add: if not arr: return -1; eventually return "not found" and also add return function() - as it is a reculusive function and needs return in every case,
+# deep seek helped me out a little, it is important to add: if not arr: return -1; eventually return "not found" and also add return function() - as it is a reculusive function and needs return in every case,
 
 """def binary_search(arr: [], needle):
     if not arr:
@@ -50,10 +67,6 @@ def merge(left,right):
         return binary_search(arr[middle+1:], needle)
     else:
         return binary_search(arr[:middle],needle)"""
-
-
-
-
 
 """print(bubble_sort([3, 2, 6, -111, 1, 1]))
 print(selection_sort([3, 3, 3, 3, 1, -444, 123]))
@@ -91,5 +104,3 @@ print(fib_recursive(8))
 
 
 """
-
-
