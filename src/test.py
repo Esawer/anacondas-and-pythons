@@ -1,12 +1,11 @@
 # katas - may be deleted(?)
 
 
-
 """def count_by(x, n):
-    result = []
-    for i in range(1, n + 1):
-        result.append(i * x)
-    return result
+result = []
+for i in range(1, n + 1):
+    result.append(i * x)
+return result
 """
 """def count_sheeps(sheep):
     a = 0
