@@ -1,7 +1,7 @@
 import random
 
 
-# key game - project 1, well working
+# key game - project 1, finished and closed(for now)
 
 def player_moving(player_dir):
     while True:
