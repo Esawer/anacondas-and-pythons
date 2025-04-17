@@ -3,14 +3,32 @@ import random
 
 # key game - project 1, well working
 
+def player_moving(player_dir):
+    while True:
+        match player_dir:
+            case "w"|"W" if player[0] != 0:
+                player[0] -= 1
+                break
+            case "a" | "A" if player[1] != 0:
+                player[1] -= 1
+                break
+            case "d" | "D" if player[1] != map_size - 1:
+                player[1] += 1
+                break
+            case "s" | "S" if player[0] != map_size - 1:
+                player[0] += 1
+                break
+            case _:
+                player_moving(input(f"You are on square {player}, where do you wish to go: "))
+        break
 
-def player_moving():
+
+
+"""def player_moving():
     while True:
         if found_the_key:
             return 0
         player_move = input(f"You are on square {player}, where do you wish to go: ")
-        x = player[0]
-        y = player[1]
 
         if (player_move == "w" or player_move == "W") and player[0] != 0:
             player[0] -= 1
@@ -25,7 +43,7 @@ def player_moving():
             player[0] += 1
             break
         else:
-            continue
+            continue"""
 
 
 map_size = 0
@@ -53,9 +71,10 @@ while not found_the_key:
                 print("@", end=" ")
         print("")
     print("")
-    player_moving()
+    if found_the_key:break
+    player_moving(input(f"You are on square {player}, where do you wish to go: "))
     player_moves += 1
 
 print(
-    f"Hurry, you have found the key at {player[1]},{player[0]} - using only {player_moves}!"
+    f"Hurry, you have found the key at {player[1]},{player[0]} - using only {player_moves} moves!"
 )

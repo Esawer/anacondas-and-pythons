@@ -1,5 +1,4 @@
 import os
-import random
 from pathlib import Path
 
 script_dir = Path(__file__).parent
