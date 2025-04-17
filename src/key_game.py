@@ -6,7 +6,7 @@ import random
 def player_moving(player_dir):
     while True:
         match player_dir:
-            case "w"|"W" if player[0] != 0:
+            case "w" | "W" if player[0] != 0:
                 player[0] -= 1
                 break
             case "a" | "A" if player[1] != 0:
@@ -21,29 +21,6 @@ def player_moving(player_dir):
             case _:
                 player_moving(input(f"You are on square {player}, where do you wish to go: "))
         break
-
-
-
-"""def player_moving():
-    while True:
-        if found_the_key:
-            return 0
-        player_move = input(f"You are on square {player}, where do you wish to go: ")
-
-        if (player_move == "w" or player_move == "W") and player[0] != 0:
-            player[0] -= 1
-            break
-        elif (player_move == "a" or player_move == "A") and player[1] != 0:
-            player[1] -= 1
-            break
-        elif (player_move == "d" or player_move == "D") and player[1] != map_size - 1:
-            player[1] += 1
-            break
-        elif (player_move == "s" or player_move == "S") and player[0] != map_size - 1:
-            player[0] += 1
-            break
-        else:
-            continue"""
 
 
 map_size = 0
@@ -71,7 +48,7 @@ while not found_the_key:
                 print("@", end=" ")
         print("")
     print("")
-    if found_the_key:break
+    if found_the_key: break
     player_moving(input(f"You are on square {player}, where do you wish to go: "))
     player_moves += 1
 
