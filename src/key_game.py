@@ -1,7 +1,7 @@
 import random
 
 
-# key game - project 1, finished and closed(for now)
+# key game - project 1, finished and closed(for now), adding "warmer, colder help hint"
 
 def player_moving(player_dir):
     while True:
