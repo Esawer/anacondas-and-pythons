@@ -1,105 +1,104 @@
-# katas - may be deleted(?)
+#level 3.5(1st); 5.3(1st)?
+#zip and loop unpacking exer
+#str.maketrans(); .format
+#pathlib
+
+import json
+import os
+import random
+from turtledemo.sorting_animate import randomize
 
 
-"""def count_by(x, n):
-result = []
-for i in range(1, n + 1):
-    result.append(i * x)
-return result
-"""
-"""def count_sheeps(sheep):
-    a = 0
-    if not sheep:
-        return a
-    for i in range(len(sheep)):
-        if sheep[i] == True:
-            a+=1
-    return a"""
+def game_start(game_questions):
+    points = 0
+    supporting_list = ["a","b","c","d","e"]
 
-# Basic sorting algorithm
+    for i in range(len(game_questions["questions"])):
+        print(f"{i+1}. {game_questions["questions"][i]["question"]}",f"\tdifficulty - {game_questions["questions"][i]["difficulty"]}")
 
-"""def bubble_sort(arr: []) -> []:
-    for i in range(len(arr)):
-        checker = False
-        for j in range(len(arr) - 1 - i):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
-                checker = True
-        if not checker:
-            return arr
+        questions_ans = game_questions["questions"][i]["answers"]
+        random.shuffle(questions_ans)
 
-    return arr"""
+        for j in range(len(questions_ans)):
+            print(f" {supporting_list[j]})",game_questions["questions"][i]["answers"][j])
 
-"""def selection_sort(arr: []) -> []:
-    for i in range(len(arr)):
-        min_element = i
-        for j in range(i, len(arr)):
-            if arr[min_element] > arr[j]:
-                min_element = j
-        arr[min_element], arr[i] = arr[i], arr[min_element]
+        while True:
+            u_input = input("\n> ").lower()
 
-    return arr
+            if u_input in supporting_list:
+                if game_questions["questions"][i]["correct"] == questions_ans[supporting_list.index(u_input)]:
+                    points += 1
+                    print("Correct!\n")
+                else:
+                    print("Incorrect.\n")
+                break
 
-def merge_sort(arr: []) -> []:
-    if len(arr) <= 1:
-        return arr
-    
-    left_half = [arr[:len(arr)//2]]
-    right_half = [arr[len(arr)//2:]]
-    return merge(left, right)
+            else:
+                print("Wrong input")
 
-def merge(left,right):
-    """
+    print(f"Your score: {points} / {len(game_questions["questions"])}","- perfect score!" if points == len(game_questions["questions"]) else "")
 
-# deep seek helped me out a little, it is important to add: if not arr: return -1; eventually return "not found" and also add return function() - as it is a reculusive function and needs return in every case,
-
-"""def binary_search(arr: [], needle):
-    if not arr:
-        return -1
-
-    middle = (len(arr)) // 2
-    if needle == arr[middle]:
-        return f"found it - {arr[middle]}"
-
-
-    if needle > arr[middle]:
-        return binary_search(arr[middle+1:], needle)
+    if input("\n# Would you like to play again(y/n)?\n> ").lower() == ("y","1"):
+        file_choose_menu()
     else:
-        return binary_search(arr[:middle],needle)"""
-
-"""print(bubble_sort([3, 2, 6, -111, 1, 1]))
-print(selection_sort([3, 3, 3, 3, 1, -444, 123]))
-print(binary_search([1,2,3,4,5,6,7,8,9,19],19))
+        print("Thank you for playing.")
 
 
-# silnia/factorial
+def file_choose_menu():
+    data = 0
 
-def factorial_recursive(number: int, result: int) -> int:
-    if number <= 1:
-        return result
+    while True:
+        print("\nSELECT FILE:")
 
-    return factorial_recursive(number - 1, result * number)
+        try:
+            game_files = os.listdir(r"C:\Users\igore\PycharmProjects\anacondas-and-pythons\data\test_data")
+            if not game_files: raise FileNotFoundError
+
+            for i, j in enumerate(game_files, 1):
+                print(f"{i}. {j}")
+
+            if 0 < (a := int(input("\n> "))) <= len(game_files):
+                with open(fr"C:\Users\igore\PycharmProjects\anacondas-and-pythons\data\test_data\{game_files[a - 1]}", "r") as f:
+                    data = json.load(f)
+
+                return data
+            else:
+                raise TypeError
+
+        except FileNotFoundError:
+            print("Error - no files found")
+            return None
+
+        except TypeError:
+            print("Error - wrong input value")
+
+        except ValueError:
+            print("Error - wrong input type")
 
 
-def factorial_iteration(number: int) -> int:
-    result = 1
-    for i in range(1, number + 1):
-        result *= i
-    return result
+def main_menu():
+    running = True
 
+    (print
+     (""" 
+    % QUIZ GAME %
+    1. START GAME
+    2. CREATOR
+    3. EXIT GAME
+    """))
 
-# fibonacci sequence
+    while running:
 
-def fib_recursive(number: int) -> int:
-    if number <= 1:
-        return number
+        match input("> "):
+            case "1":
+                file_dat = file_choose_menu()
+                if file_dat is not None:
+                    game_start(file_dat)
+                running = False
+            case "2":
+                print(f"CREATOR----> Esawer\n")
+            case "3":
+                running = False
+            case _:
+                print("Enter correct input.")
 
-    return fib_recursive(number - 1)+fib_recursive(number - 2)
-
-
-print(factorial_recursive(12, 1))
-print(factorial_iteration(5))
-print(fib_recursive(8))
-
-
-"""
