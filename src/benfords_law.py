@@ -3,6 +3,7 @@ from pathlib import Path
 
 script_dir = Path(__file__).parent
 project_root = script_dir.parent
+print(project_root)
 data_files = os.listdir(f"{project_root}/data/benfords-law")
 
 print("Files: ")
