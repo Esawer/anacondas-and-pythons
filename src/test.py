@@ -1,26 +1,26 @@
-#level 3.5(1st); 5.3(1st)?
-#zip and loop unpacking exer
-#str.maketrans(); .format
-#pathlib
+# level 3.5(1st); 5.3(1st)?
+# zip and loop unpacking exer
+# str.maketrans(); .format
+# pathlib
 
 import json
 import os
 import random
-from turtledemo.sorting_animate import randomize
 
 
 def game_start(game_questions):
     points = 0
-    supporting_list = ["a","b","c","d","e"]
+    supporting_list = ["a", "b", "c", "d", "e"]
 
     for i in range(len(game_questions["questions"])):
-        print(f"{i+1}. {game_questions["questions"][i]["question"]}",f"\tdifficulty - {game_questions["questions"][i]["difficulty"]}")
+        print(f"{i + 1}. {game_questions["questions"][i]["question"]}",
+              f"\tdifficulty - {game_questions["questions"][i]["difficulty"]}")
 
         questions_ans = game_questions["questions"][i]["answers"]
         random.shuffle(questions_ans)
 
         for j in range(len(questions_ans)):
-            print(f" {supporting_list[j]})",game_questions["questions"][i]["answers"][j])
+            print(f" {supporting_list[j]})", game_questions["questions"][i]["answers"][j])
 
         while True:
             u_input = input("\n> ").lower()
@@ -36,9 +36,10 @@ def game_start(game_questions):
             else:
                 print("Wrong input")
 
-    print(f"Your score: {points} / {len(game_questions["questions"])}","- perfect score!" if points == len(game_questions["questions"]) else "")
+    print(f"Your score: {points} / {len(game_questions["questions"])}",
+          "- perfect score!" if points == len(game_questions["questions"]) else "")
 
-    if input("\n# Would you like to play again(y/n)?\n> ").lower() == ("y","1"):
+    if input("\n# Would you like to play again(y/n)?\n> ").lower() == ("y", "1"):
         file_choose_menu()
     else:
         print("Thank you for playing.")
@@ -58,7 +59,8 @@ def file_choose_menu():
                 print(f"{i}. {j}")
 
             if 0 < (a := int(input("\n> "))) <= len(game_files):
-                with open(fr"C:\Users\igore\PycharmProjects\anacondas-and-pythons\data\test_data\{game_files[a - 1]}", "r") as f:
+                with open(fr"C:\Users\igore\PycharmProjects\anacondas-and-pythons\data\test_data\{game_files[a - 1]}",
+                          "r") as f:
                     data = json.load(f)
 
                 return data
@@ -102,3 +104,4 @@ def main_menu():
             case _:
                 print("Enter correct input.")
 
+main_menu()

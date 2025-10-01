@@ -9,6 +9,8 @@ __pycache__/
 # Distribution / packaging
 .Python
 output/benfords_law_output/**
+data/test_data/**
+src/local_test.py
 output/benfords_law_output/.gitkeep
 build/
 develop-eggs/
