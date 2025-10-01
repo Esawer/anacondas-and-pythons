@@ -8,8 +8,6 @@ import os
 import random
 from turtledemo.sorting_animate import randomize
 
-s = "Eat me1!"
-print("".join([a for a in s if not a.isnumeric()]))
 
 def game_start(game_questions):
     points = 0
