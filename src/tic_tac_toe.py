@@ -221,7 +221,6 @@ def game_start(custom_mode: bool = False, field_size: int = 3):
 def main_menu():
     """
     Main menu, starts at the beginning of the program.
-    TODO: after the game players will have the choice, between going back to main menu or starting another game - in the same game_mode.
     :return:
     """
     running = True
